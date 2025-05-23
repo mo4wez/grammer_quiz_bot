@@ -61,8 +61,8 @@ async def send_question(message, user_id, question_index):
     asyncio.create_task(question_timer(message, user_id, question_index))
 
 async def question_timer(message, user_id, question_index):
-    """Timer for each question (15 seconds)"""
-    await asyncio.sleep(15)
+    """Timer for each question (30 seconds)"""
+    await asyncio.sleep(30)
     
     # Check if the user is still on this question
     if (user_id in active_quizzes and 
@@ -164,7 +164,7 @@ async def quiz_command(client: Client, message: Message):
     welcome_message = await message.reply_text(
         f"Welcome to the Passive Voice Grammar Quiz, {message.from_user.first_name}!\n\n"
         f"You will be presented with {len(user_questions)} questions about passive voice in English grammar.\n"
-        f"Each question has a 15-second time limit.\n\n"
+        f"Each question has a 30-second time limit.\n\n"
         f"Click the button below when you're ready to start!",
         reply_markup=reply_markup
     )
