@@ -1,4 +1,5 @@
 /venv/
 *.db
 *.session
+*.session-journal
 .env
