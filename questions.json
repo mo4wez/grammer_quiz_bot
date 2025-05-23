@@ -1,0 +1,114 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which sentence is in passive voice?",
+      "options": [
+        "She wrote a letter.",
+        "The letter was written by her.",
+        "They are writing letters.",
+        "He writes letters every day."
+      ],
+      "correct_answer": 1
+    },
+    {
+      "id": 2,
+      "question": "Identify the passive voice sentence:",
+      "options": [
+        "The chef is cooking dinner.",
+        "The students completed their assignments.",
+        "The movie was directed by Steven Spielberg.",
+        "We will visit the museum tomorrow."
+      ],
+      "correct_answer": 2
+    },
+    {
+      "id": 3,
+      "question": "Convert this active voice to passive: 'The teacher explains the lesson.'",
+      "options": [
+        "The lesson explained the teacher.",
+        "The lesson is explained by the teacher.",
+        "The teacher is explaining the lesson.",
+        "The lesson explains the teacher."
+      ],
+      "correct_answer": 1
+    },
+    {
+      "id": 4,
+      "question": "Which sentence uses passive voice correctly?",
+      "options": [
+        "The cake eaten by everyone.",
+        "The cake was eaten by everyone.",
+        "Everyone was eaten the cake.",
+        "The cake is eat by everyone."
+      ],
+      "correct_answer": 1
+    },
+    {
+      "id": 5,
+      "question": "Identify the passive construction:",
+      "options": [
+        "They have built a new bridge.",
+        "A new bridge has been built.",
+        "They are building a new bridge.",
+        "They will build a new bridge."
+      ],
+      "correct_answer": 1
+    },
+    {
+      "id": 6,
+      "question": "Which sentence is NOT in passive voice?",
+      "options": [
+        "The window was broken.",
+        "The test has been completed.",
+        "She broke the window.",
+        "The car is being repaired."
+      ],
+      "correct_answer": 2
+    },
+    {
+      "id": 7,
+      "question": "Convert to passive voice: 'People speak English all over the world.'",
+      "options": [
+        "English speaks all over the world.",
+        "English is spoken all over the world.",
+        "English was spoken all over the world.",
+        "English speaks by people all over the world."
+      ],
+      "correct_answer": 1
+    },
+    {
+      "id": 8,
+      "question": "Which tense is used in this passive voice sentence: 'The book will be published next month.'?",
+      "options": [
+        "Present simple passive",
+        "Past simple passive",
+        "Future simple passive",
+        "Present perfect passive"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "id": 9,
+      "question": "Identify the correct passive form of: 'They are repairing the road.'",
+      "options": [
+        "The road is repaired.",
+        "The road is being repaired.",
+        "The road was being repaired.",
+        "The road has been repaired."
+      ],
+      "correct_answer": 1
+    },
+    {
+      "id": 10,
+      "question": "Which sentence has the correct passive structure?",
+      "options": [
+        "The letter written yesterday.",
+        "The letter was wrote yesterday.",
+        "The letter was written yesterday.",
+        "The letter is write yesterday."
+      ],
+      "correct_answer": 2
+    }
+  ]
+}

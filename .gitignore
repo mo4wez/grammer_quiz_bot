@@ -1,0 +1,4 @@
+/venv/
+*.db
+*.session
+.env
