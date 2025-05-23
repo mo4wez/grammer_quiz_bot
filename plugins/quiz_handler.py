@@ -1,14 +1,14 @@
 import json
 import asyncio
 import datetime
-import random  # Add this import
+import random
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message, CallbackQuery
 from models import User, QuizAttempt, UserAnswer
 
 # Load questions from JSON file
 with open("questions.json", "r") as f:
-    ALL_QUESTIONS = json.load(f)["questions"]  # Renamed to ALL_QUESTIONS
+    ALL_QUESTIONS = json.load(f)["questions"]
 
 # Store active quiz sessions
 active_quizzes = {}
@@ -156,16 +156,37 @@ async def quiz_command(client: Client, message: Message):
         "questions": user_questions  # Store the randomized questions
     }
     
-    # Send welcome message
+    # Create start quiz button
+    keyboard = [[InlineKeyboardButton("Start Quiz", callback_data="start_quiz")]]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    
+    # Send welcome message with start button
     welcome_message = await message.reply_text(
         f"Welcome to the Passive Voice Grammar Quiz, {message.from_user.first_name}!\n\n"
         f"You will be presented with {len(user_questions)} questions about passive voice in English grammar.\n"
         f"Each question has a 15-second time limit.\n\n"
-        f"Get ready!"
+        f"Click the button below when you're ready to start!",
+        reply_markup=reply_markup
     )
     
-    # Start countdown
-    await countdown(welcome_message, user_id)
+    # Store the welcome message ID for reference
+    active_quizzes[user_id]["welcome_message_id"] = welcome_message.id
+
+@Client.on_callback_query(filters.regex(r'^start_quiz$'))
+async def handle_start_quiz(client: Client, callback_query: CallbackQuery):
+    """Handle the start quiz button click"""
+    user_id = callback_query.from_user.id
+    
+    # Check if the user has an active quiz
+    if user_id not in active_quizzes:
+        await callback_query.answer("No active quiz found. Please start a new one with /quiz")
+        return
+    
+    # Answer the callback to remove the loading state
+    await callback_query.answer("Starting quiz...")
+    
+    # Start the countdown
+    await countdown(callback_query.message, user_id)
 
 @Client.on_callback_query(filters.regex(r'^answer_(\d+)_(\d+)$'))
 async def handle_quiz_answer(client: Client, callback_query: CallbackQuery):
